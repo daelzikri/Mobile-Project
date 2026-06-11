@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            android:background="#00695C" app:title="Laporan Transaksi"
+            app:titleTextColor="#FFFFFF"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <!-- Filter -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <Button android:id="@+id/btnPickStart"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Dari: Pilih"
+                android:backgroundTint="#00695C" android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnPickEnd"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Sampai: Pilih"
+                android:backgroundTint="#00695C"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <Button android:id="@+id/btnFilterAll"
+                android:layout_width="0dp" android:layout_height="36dp"
+                android:layout_weight="1" android:text="Semua"
+                android:backgroundTint="#00695C" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnFilterPenjualan"
+                android:layout_width="0dp" android:layout_height="36dp"
+                android:layout_weight="1" android:text="Penjualan"
+                android:backgroundTint="#2E7D32" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnFilterBuyback"
+                android:layout_width="0dp" android:layout_height="36dp"
+                android:layout_weight="1" android:text="Buyback"
+                android:backgroundTint="#E65100"/>
+        </LinearLayout>
+
+        <!-- Summary -->
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="12dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Total Penjualan" android:textSize="11sp" android:textColor="#666"/>
+                    <TextView android:id="@+id/tvTotalPenjualan"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Rp 0" android:textStyle="bold" android:textColor="#2E7D32"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Total Buyback" android:textSize="11sp" android:textColor="#666"/>
+                    <TextView android:id="@+id/tvTotalBuyback"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Rp 0" android:textStyle="bold" android:textColor="#E65100"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView android:id="@+id/tvEmpty"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tidak ada transaksi pada periode ini"
+            android:textColor="#999999" android:visibility="gone"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
