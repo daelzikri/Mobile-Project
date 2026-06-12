@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kelompok.goldms.data.repository.GoldRepository
 import com.kelompok.goldms.databinding.ActivityDashboardKasirBinding
 import com.kelompok.goldms.ui.auth.LoginActivity
+import com.kelompok.goldms.ui.expense.ExpenseActivity
+import com.kelompok.goldms.ui.inventory.InventoryActivity
+import com.kelompok.goldms.ui.transaction.BuybackFormActivity
+import com.kelompok.goldms.ui.transaction.SaleFormActivity
 import com.kelompok.goldms.utils.FormatHelper
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
@@ -31,6 +35,10 @@ class DashboardKasirActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
+        binding.btnPenjualan.setOnClickListener   { startActivity(Intent(this, SaleFormActivity::class.java)) }
+        binding.btnBuyback.setOnClickListener     { startActivity(Intent(this, BuybackFormActivity::class.java)) }
+        binding.btnInventaris.setOnClickListener  { startActivity(Intent(this, InventoryActivity::class.java)) }
+        binding.btnPengeluaran.setOnClickListener { startActivity(Intent(this, ExpenseActivity::class.java)) }
         binding.btnPenjualan.setOnClickListener   { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }
         binding.btnBuyback.setOnClickListener     { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }
         binding.btnInventaris.setOnClickListener  { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }

@@ -13,6 +13,12 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.kelompok.goldms.data.repository.GoldRepository
 import com.kelompok.goldms.databinding.ActivityDashboardAdminBinding
 import com.kelompok.goldms.ui.auth.LoginActivity
+import com.kelompok.goldms.ui.expense.ExpenseActivity
+import com.kelompok.goldms.ui.inventory.InventoryActivity
+import com.kelompok.goldms.ui.report.ReportActivity
+import com.kelompok.goldms.ui.transaction.BuybackFormActivity
+import com.kelompok.goldms.ui.transaction.SaleFormActivity
+import com.kelompok.goldms.ui.user.UserManagementActivity
 import com.kelompok.goldms.utils.FormatHelper
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
@@ -37,6 +43,12 @@ class DashboardAdminActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
+        binding.btnInventaris.setOnClickListener    { startActivity(Intent(this, InventoryActivity::class.java)) }
+        binding.btnPenjualan.setOnClickListener     { startActivity(Intent(this, SaleFormActivity::class.java)) }
+        binding.btnBuyback.setOnClickListener       { startActivity(Intent(this, BuybackFormActivity::class.java)) }
+        binding.btnPengeluaran.setOnClickListener   { startActivity(Intent(this, ExpenseActivity::class.java)) }
+        binding.btnLaporan.setOnClickListener       { startActivity(Intent(this, ReportActivity::class.java)) }
+        binding.btnKelolaPengguna.setOnClickListener { startActivity(Intent(this, UserManagementActivity::class.java)) }
         binding.btnInventaris.setOnClickListener    { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }
         binding.btnPenjualan.setOnClickListener     { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }
         binding.btnBuyback.setOnClickListener       { Toast.makeText(this, "Fitur dalam pengembangan", Toast.LENGTH_SHORT).show() }
