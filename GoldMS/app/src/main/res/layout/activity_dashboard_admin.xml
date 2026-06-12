@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1A1A1A"
+            app:title="Gold-MS — Admin"
+            app:titleTextColor="#FFD700"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Harga Emas Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#1A1A1A">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Harga Emas 24K Hari Ini"
+                        android:textColor="#FFD700"
+                        android:textSize="13sp"/>
+                    <TextView
+                        android:id="@+id/tvHargaEmas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Memuat..."
+                        android:textColor="#FFFFFF"
+                        android:textSize="28sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvLastUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#AAAAAA"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Summary Cards -->
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp" android:layout_marginEnd="8dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💰 Omzet Hari Ini" android:textSize="12sp" android:textColor="#666"/>
+                        <TextView android:id="@+id/tvOmzet" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Rp 0"
+                            android:textSize="16sp" android:textStyle="bold" android:textColor="#2E7D32"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📊 Nilai Aset Stok" android:textSize="12sp" android:textColor="#666"/>
+                        <TextView android:id="@+id/tvNilaiAset" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Rp 0"
+                            android:textSize="16sp" android:textStyle="bold" android:textColor="#1565C0"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp" android:layout_marginEnd="8dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🔄 Buyback" android:textSize="12sp" android:textColor="#666"/>
+                        <TextView android:id="@+id/tvBuyback" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Rp 0"
+                            android:textSize="16sp" android:textStyle="bold" android:textColor="#E65100"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🧾 Pengeluaran" android:textSize="12sp" android:textColor="#666"/>
+                        <TextView android:id="@+id/tvPengeluaran" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="Rp 0"
+                            android:textSize="16sp" android:textStyle="bold" android:textColor="#C62828"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Grafik Mingguan -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📈 Omzet 7 Hari Terakhir"
+                        android:textStyle="bold" android:textColor="#1A1A1A"
+                        android:layout_marginBottom="8dp"/>
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Menu Admin -->
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Admin"
+                android:textSize="16sp" android:textStyle="bold"
+                android:textColor="#1A1A1A" android:layout_marginBottom="12dp"/>
+
+            <GridLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2" android:useDefaultMargins="true">
+
+                <Button android:id="@+id/btnInventaris"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="📦 Inventaris" android:backgroundTint="#1565C0"/>
+                <Button android:id="@+id/btnPenjualan"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="💍 Penjualan" android:backgroundTint="#2E7D32"/>
+                <Button android:id="@+id/btnBuyback"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="🔄 Buyback" android:backgroundTint="#E65100"/>
+                <Button android:id="@+id/btnPengeluaran"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="🧾 Pengeluaran" android:backgroundTint="#6A1B9A"/>
+                <Button android:id="@+id/btnLaporan"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="📋 Laporan" android:backgroundTint="#00695C"/>
+                <Button android:id="@+id/btnKelolaPengguna"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1"
+                    android:text="👥 Pengguna" android:backgroundTint="#4527A0"/>
+                <Button android:id="@+id/btnLogout"
+                    android:layout_width="0dp" android:layout_height="64dp"
+                    android:layout_columnWeight="1" android:layout_columnSpan="2"
+                    android:text="🚪 Logout" android:backgroundTint="#757575"/>
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

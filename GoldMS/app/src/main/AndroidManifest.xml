@@ -8,7 +8,24 @@
         android:icon="@mipmap/ic_launcher"
         android:label="Gold-MS"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GoldMS">
+
+        <activity android:name=".ui.auth.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login & Register -->
+        <activity android:name=".ui.auth.LoginActivity" android:exported="false"/>
+        <activity android:name=".ui.auth.RegisterActivity" android:exported="false"/>
+
+        <!-- Dashboard -->
+        <activity android:name=".ui.dashboard.DashboardKasirActivity" android:exported="false"/>
+        <activity android:name=".ui.dashboard.DashboardAdminActivity" android:exported="false"/>
 
     </application>
 
